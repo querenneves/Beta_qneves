@@ -1,0 +1,70 @@
+/* Estilo do fundo com efeito de universo e estrelas */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+  }
+  
+  .container {
+    text-align: center;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Estilo do texto central */
+  h1 {
+    font-size: 3em;
+    color: #FFF;
+    font-family: 'Graffiti', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: neon 1.5s ease-in-out infinite alternate;
+  }
+  
+  /* Animação de flutuação do texto */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Efeito de neon para o texto */
+  @keyframes neon {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+    }
+  }
+  
+  /* Estrelas no fundo */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(2px 2px at 20px 20px, #ffffff, rgba(255, 255, 255, 0)) repeat;
+    background-size: 10px 10px;
+    opacity: 0.4;
+    animation: starMovement 100s linear infinite;
+  }
+  
+  /* Movimentação suave das estrelas */
+  @keyframes starMovement {
+    from {
+      transform: translate(-50%, -50%);
+    }
+    to {
+      transform: translate(50%, 50%);
+    }
+  }
+  
